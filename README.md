@@ -5,7 +5,9 @@ This is the open code of paper entitled **"CS-SHAP: Extending SHAP to Cyclic-Spe
 
 ### Notes
 
+* **(Feb 14, 2025)**: The preprint version is available on [Arxiv](https://arxiv.org/abs/2502.06424).
 * **(Dec 4, 2024)**: We will upload our code after the paper is accepted.
 
-## Contact
-* chenqian2020@sjtu.edu.cn & [Homepage of Qian Chen](https://chenqian0618.github.io/Homepage/).
+## Contact and Related work
+* chenqian2020@sjtu.edu.cn & [Homepage of Qian Chen](https://chenqian0618.github.io/Homepage/);
+* 
