@@ -100,4 +100,7 @@ if __name__ == '__main__':
 
     trainer.plot_save()
 
-    print("Training finished! checkpoint saved in: \n{}".format(os.path.abspath(save_dir)))
+    print("\nTraining finished! checkpoint saved in: \n{}".format(os.path.abspath(save_dir)))
+
+    print("\nYou can run the following command to conduct SHAP analysis: \n", 
+          f"python Demo/Demo_analysis.py --checkpoint_name '{sub_dir:s}'")
