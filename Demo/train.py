@@ -33,7 +33,7 @@ def parse_args():
     # datasets parameters
     parser.add_argument('--data_name', type=str, default='Simulation', choices=['Simulation', 'CWRU',], help='the name of the data')
     parser.add_argument('--data_dir', type=str,
-                        default=r'./checkpoint/Buffer-SimulationDataset',
+                        default=r'./Datasets/Buffer-SimulationDataset',
                         help='the directory of the data')
     parser.add_argument('--data_type', type=str, default='time', choices=['time', ], help='the name of the data')
     parser.add_argument('--normlizetype', type=str, default='mean-std', choices=['0-1', '-1-1', 'mean-std', 'none'], help='data normalization methods')
@@ -47,8 +47,8 @@ def parse_args():
     # models parameters
     parser.add_argument('--model_name', type=str, default='CNN',
                         choices=['MLP', 'CNN', 'resnet18', 'BiLSTM', 'Transformer'], help='')
-    parser.add_argument('--checkpoint_dir', type=str, default='./checkpoint/TrainResults',
-                        help='the directory to save the models')  # ./checkpoint/TrainResults
+    parser.add_argument('--checkpoint_dir', type=str, default='./checkpoint',
+                        help='the directory to save the models')  # ./checkpoint
 
     # optimization information
     parser.add_argument('--opt', type=str, choices=['sgd', 'adam'], default='adam', help='the optimizer')

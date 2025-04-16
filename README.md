@@ -12,12 +12,12 @@
 
 ## Repository Structure  
 ### Core Code  
-- **`SHAPs/MultiDomain_SHAP.py`**: Implements **multi-domain SHAP** (**Time/Freq/Env/TF/CS-SHAP**).  
-- **`SHAPs/DomainTransform.py`**: Signal processing for domain transforms.  
-- **`SHAPs/utils_SHAP_MyIndependent.py`**: Modified SHAP utilities for to support `numpy.ndarray` with `dtype=object`.
+- **`SHAPs/MultiDomain_SHAP.py`**: Implementation of **multi-domain SHAP** (**Time/Freq/Env/TF/CS-SHAP**).  
+- **`SHAPs/DomainTransform.py`**: Signal processing of domain transforms.  
+- **`SHAPs/utils_SHAP_MyIndependent.py`**: Modified SHAP utilities to support `numpy.ndarray` with `dtype=object`.
 
 ### Demo Code  
-Besides, we also provide **Demo Code**  of the simulation dataset and CWRU dataset. Run the Demo, and you will get the same experimental results as descripted in the [preprint paper](https://arxiv.org/abs/2502.06424).
+Besides, we also provide **Demo Code**  of the simulation dataset and CWRU dataset. Run the Demo, and you will get the same experimental results as descripted in the [paper](https://arxiv.org/abs/2502.06424).
 
 The repo structure is organized as follows:
 ```
@@ -49,7 +49,7 @@ conda install pandas matplotlib seaborn scipy=1.13.1 scikit-learn shap=0.42.1
 
 
 ### 2. Download Datasets
-**Simulation**: Auto-generated (saved to `Demo/checkpoint/Buffer-SimulationDataset`).
+**Simulation**: Auto-generated (saved to `Demo/Datasets/Buffer-SimulationDataset`).
 
 **CWRU**：
 
@@ -74,7 +74,7 @@ conda install pandas matplotlib seaborn scipy=1.13.1 scikit-learn shap=0.42.1
 python Demo/train.py --data_name 'Simulation' 
 # the result is located in Demo/checkpoint/$checkpoint_name$
 
-# step 2: conduct SHAP analysis, select the first checkpoint_name automatically
+# step 2: conduct SHAP analysis and select the first checkpoint_name automatically
 python Demo/Demo_analysis.py 
 # the result is located in Demo/checkpoint/$checkpoint_name$/PostProcess_of_SHAP_Analysis
 

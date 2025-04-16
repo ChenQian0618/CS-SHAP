@@ -81,7 +81,7 @@ class Simulation(object):
 
 if __name__ == '__main__':
     args = {'data_type': 'time', 'normlizetype': 'mean-std', 'test_size': 0.3,
-            'data_dir': os.path.join(projecht_dir,'Demo','checkpoint','Buffer-SimulationDataset'), }
+            'data_dir': os.path.join(projecht_dir,'Demo','Datasets','Buffer-SimulationDataset'), }
     simulation = Simulation(args)
 
     a, b = simulation.data_preprare(plot=True,SNR=0)
