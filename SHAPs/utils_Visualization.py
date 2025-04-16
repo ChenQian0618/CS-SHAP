@@ -70,7 +70,7 @@ def attr_visualization(savedir, mode, data, value,plot_params,
             ax = Axes[n][0]
             ax.plot(x, Y_base[n])
             ax.margins(x=0.001)
-            ax.set_xlabel(xlabel + f' | sample#{n}-label#{label[n]:d}')
+            ax.set_xlabel(xlabel + f' | sample#{n} - label#{label[n]:d}')
             ax.set_ylabel('Amp.')
 
         for n in range(N):
@@ -80,7 +80,7 @@ def attr_visualization(savedir, mode, data, value,plot_params,
                 ax = Axes[n][k + 1]
                 ax.plot(x, ys[k], color='C1', alpha=0.8)  # mpl.rcParams['axes.prop_cycle'].by_key()['color'][1]
                 ax.margins(x=0.001)
-                ax.set_xlabel(xlabel + f' | {predict[n, k] * 100:.1f}%')
+                ax.set_xlabel(xlabel + f' | $y_{k}$={predict[n, k] * 100:.1f}%')
                 ax.set_ylim(ylim)
                 ax.set_ylabel(ylabel)
                 # value
@@ -98,7 +98,7 @@ def attr_visualization(savedir, mode, data, value,plot_params,
         for n in range(N):
             ax = Axes[n][0]
             ax.pcolormesh(x, y, Z_base[n], cmap='Blues', shading='gouraud', rasterized=True)
-            ax.set_xlabel(xlabel + f' | sample#{n}-label#{label[n]:d}')
+            ax.set_xlabel(xlabel + f' | sample#{n} - label#{label[n]:d}')
             ax.set_ylabel(ylabel)
 
         for n in range(N):
@@ -107,14 +107,22 @@ def attr_visualization(savedir, mode, data, value,plot_params,
                 ax = Axes[n][k + 1]
                 ax.pcolormesh(x, y, Zs[k, n], cmap='bwr', shading='auto',
                               vmin=-bound, vmax=bound, rasterized=True)
-                ax.set_xlabel(xlabel + f' | {predict[n, k] * 100:.2f}%')
+                ax.set_xlabel(xlabel + f'| $y_{k}$={predict[n, k] * 100:.2f}%')
                 ax.set_ylabel(ylabel)
                 ax.set_xticks(Axes[n][0].get_xticks())
                 ax.set_yticks(Axes[n][0].get_yticks())
                 ax.set_xlim(Axes[n][0].get_xlim())
                 ax.set_ylim(Axes[n][0].get_ylim())
 
-    # 3) uniform the ticks and save
+    # 3) add title
+    for k in range(K + 1):
+        ax = Axes[0][k]
+        if k == 0:
+            ax.set_title('Data presentation', fontweight='bold')
+        else:
+            ax.set_title(f'Predicted class #{k - 1:d}', fontweight='bold')
+
+    # 4) uniform the ticks and save
     gs.tight_layout(fig, pad=1, h_pad=0.5, w_pad=1.5, rect=None)
     for n in range(N):
         for k in range(K + 1):

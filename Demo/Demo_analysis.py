@@ -1,7 +1,7 @@
 '''
 2025/04/13
 Created by ChenQian-SJTU 
-This script is used to analyze the SHAP values of the models under different situations (e.g., models, transform function, etc.)
+This script is used to analyze the SHAP values of the models under different situations (e.g., model, transform function, etc.)
 '''
 import sys,os
 def root_path_k(x, k): return os.path.abspath(os.path.join(x, *([os.pardir] * (k + 1))))
