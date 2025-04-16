@@ -32,17 +32,17 @@ if __name__ == '__main__':
     args = parse_args()
     checkpoint_root = args.checkpoint_root
     checkpoint_name = args.checkpoint_name
-    domain_mode = args.domain_mode
+    domain_modes = args.domain_mode
     # process checkpoint_name
     if checkpoint_name == 'None': # if None, use the first one
         checkpoint_name = next(os.walk(checkpoint_root))[1][0]
     checkpoint_dir = os.path.join(checkpoint_root, checkpoint_name)
     print(f'checkpoint_name: "{checkpoint_dir.replace('\\','/'):s}"')
     # process domain_mode
-    if domain_mode == 'all':
-        domain_mode = ['time', 'frequency', 'envelope', 'STFT', 'CS']
+    if domain_modes == 'all':
+        domain_modes = ['time', 'frequency', 'envelope', 'STFT', 'CS']
     else:
-        domain_mode = [domain_mode]
+        domain_modes = [domain_modes]
 
     # ----------------------------load model and data------------------------------------------------
     loader = DataModel_Loader(dir=checkpoint_dir, flag_preload_dataset=True)
@@ -51,7 +51,6 @@ if __name__ == '__main__':
 
     #  ----------------------------shap analysis------------------------------------------------
     MD_SHAP = MultiDomain_SHAP(func_predict, background_data, save_dir)
-    modes = ['time', 'frequency', 'envelope', 'STFT', 'CS']
-    for mode in modes:
-        print('\n'*2, f'------begin {mode:s} SHAP analysis--------')
+    for i,mode in enumerate(domain_modes):
+        print('\n'*2, '-'*30, f'({i+1:d}/{len(domain_modes):d}) begin {mode:s}-SHAP analysis', '-'*30)
         MD_SHAP.explain(input_data, input_label, mode=mode, preload=True, Fs=loader.Fs)

@@ -30,16 +30,16 @@ class MultiDomain_SHAP(object):
         input_data = copy.deepcopy(input_data) 
         # preparation
         func_Z, func_Z_inv, func_unpatch, trans_dict = self.mode_select(mode)
-        func_predict = lambda x: self.func_predict(func_Z_inv(x))
+        func_predict_z = lambda x: self.func_predict(func_Z_inv(x))
         savedir = self.save_dir
         rawfile_savepath = os.path.join(savedir, f'{mode:s}_SHAP_values_raw.pkl')
 
         # 1) test
-        y = func_Z(input_data, verbose=True)
+        z = func_Z(input_data, verbose=True)
         print('',end='\n')
-        y_inv = func_Z_inv(y[-1], verbose=True)
-        print('mean error: ', abs(y_inv[-1] - input_data).mean())
-        predict_ana = func_predict(y[-1])
+        z_inv = func_Z_inv(z[-1], verbose=True)
+        print('mean error: ', abs(z_inv[-1] - input_data).mean())
+        predict_ana = func_predict_z(z[-1])
         print('label of input sample:', np.argmax(predict_ana, -1))
 
         # 2) Try to preload the SHAP values
@@ -63,13 +63,13 @@ class MultiDomain_SHAP(object):
         if not preload_OK:
             plot_params = trans_dict['get_plot_params'](input_data.shape[-1], Fs=Fs)
             # 3.1) conduct SHAP analysis
-            Z = func_Z(self.background_data)
-            background_masker = MyIndependent(Z)
-            explainer = shap.Explainer(func_predict, background_masker, algorithm='permutation') # algorithm='exact' is impossible for large data
+            Z = func_Z(self.background_data) # preprocessing the background data
+            background_masker = MyIndependent(Z) 
+            explainer = shap.Explainer(func_predict_z, background_masker, algorithm='permutation') # algorithm='exact' is impossible for large data
             start_time = time.time()
             print('Start SHAP analysis, please wait...(several minutes / hours):')
             raw_shap_values = explainer(func_Z(input_data),
-                                    max_evals=max(int(1e3), int(Z.shape[-1] * 10) // 2))  # max(int(1e3), int(Z.shape[-1] * 10) // 2)
+                                    max_evals=max(int(1e3), int(Z.shape[-1] * 10) // 2))  # the calculation of SHAP
             analyse_time = time.time() - start_time
             print(f'Analyse time of {input_data.shape[0]:d} samples: {analyse_time:.1f}s')
 
@@ -81,7 +81,7 @@ class MultiDomain_SHAP(object):
                 domain_shap_value) if 'omplex' in domain_shap_value.dtype.__class__.__name__ else domain_shap_value  # avoid complex situation
 
             # 3.3) save SHAP result
-            predict_logit = func_predict(func_Z(input_data))
+            predict_logit = func_predict_z(func_Z(input_data))
             predict_prob = torch.nn.functional.softmax(torch.tensor(predict_logit), -1).numpy()
             print('(saved) input_data[0,0]: ', input_data[0][0])
             save_dict = {'raw_shap_values': raw_shap_values, 
