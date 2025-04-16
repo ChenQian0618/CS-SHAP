@@ -6,7 +6,7 @@
 > Neural networks (NNs), with their powerful nonlinear mapping and end-to-end capabilities, are widely applied in mechanical intelligent fault diagnosis (IFD). However, as typical black-box models, they pose challenges in understanding their decision basis and logic, limiting their deployment in high-reliability scenarios. Hence, various methods have been proposed to enhance the interpretability of IFD. Among these, post-hoc approaches can provide explanations without changing model architecture, preserving its flexibility and scalability. However, existing post-hoc methods often suffer from limitations in explanation forms. They either require preprocessing that disrupts the end-to-end nature or overlook fault mechanisms, leading to suboptimal explanations. To address these issues, we derived the cyclic-spectral (CS) transform and proposed the CS-SHAP by extending Shapley additive explanations (SHAP) to the CS domain. CS-SHAP can evaluate contributions from both carrier and modulation frequencies, aligning more closely with fault mechanisms and delivering clearer and more accurate explanations. Three datasets are utilized to validate the superior interpretability of CS-SHAP, ensuring its correctness, reproducibility, and practical performance. With open-source code and outstanding interpretability, CS-SHAP has the potential to be widely adopted and become the post-hoc interpretability benchmark in IFD, even in other classification tasks.
 
 **Notes**:
-* 2025-04-16: The code of Multi-domain SHAP (with full demo) is uploaded.
+* 2025-04-16: The code of **Multi-domain SHAP** (with full demo) is uploaded.
 * 2025-02-14: The preprint is available on [![arXiv](https://img.shields.io/badge/arXiv-2502.06424-b31b1b.svg)](https://arxiv.org/abs/2502.06424).
 * 2024-12-04: We will upload our code after the paper is accepted.
 
@@ -113,7 +113,7 @@ Platform infomattion: `R7-5700X`  | `RTX-4070Ti` | `WSL2`;
 
 
 
-## Results Preview of simulation dataset
+## Results Preview of Simulation Dataset
 
 **Parameter settings**:
 
