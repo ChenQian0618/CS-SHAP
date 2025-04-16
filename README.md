@@ -115,7 +115,7 @@ Platform infomattion: `R7-5700X`  | `RTX-4070Ti` | `WSL2`;
 
 ## Results Preview of simulation dataset
 
-**Parameter settingss**:
+**Parameter settings**:
 
 | Component |    $f_c$ (kHz)     |      $f_m$ (kHz)      |    Health    |   Fault #1   |   Fault #2   |
 | :-------: | :----------------: | :-------------------: | :----------: | :----------: | :----------: |
