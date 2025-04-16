@@ -6,7 +6,7 @@
 > Neural networks (NNs), with their powerful nonlinear mapping and end-to-end capabilities, are widely applied in mechanical intelligent fault diagnosis (IFD). However, as typical black-box models, they pose challenges in understanding their decision basis and logic, limiting their deployment in high-reliability scenarios. Hence, various methods have been proposed to enhance the interpretability of IFD. Among these, post-hoc approaches can provide explanations without changing model architecture, preserving its flexibility and scalability. However, existing post-hoc methods often suffer from limitations in explanation forms. They either require preprocessing that disrupts the end-to-end nature or overlook fault mechanisms, leading to suboptimal explanations. To address these issues, we derived the cyclic-spectral (CS) transform and proposed the CS-SHAP by extending Shapley additive explanations (SHAP) to the CS domain. CS-SHAP can evaluate contributions from both carrier and modulation frequencies, aligning more closely with fault mechanisms and delivering clearer and more accurate explanations. Three datasets are utilized to validate the superior interpretability of CS-SHAP, ensuring its correctness, reproducibility, and practical performance. With open-source code and outstanding interpretability, CS-SHAP has the potential to be widely adopted and become the post-hoc interpretability benchmark in IFD, even in other classification tasks.
 
 **Notes**:
-* 2025-02-14: The preprint is available on [Arxiv: 2502.06424](https://arxiv.org/abs/2502.06424).
+* 2025-02-14: The preprint is available on [![arXiv](https://img.shields.io/badge/arXiv-2502.06424-b31b1b.svg)](https://arxiv.org/abs/2502.06424).
 * 2024-12-04: We will upload our code after the paper is accepted.
 
 ## Repository Structure  
@@ -98,7 +98,7 @@ python Demo/Demo_analysis.py --checkpoint_name $checkpoint_name$ # the result is
 
 ## Results Preview of simulation dataset
 
-**Dataset presentation**:
+**Parameter settingss**:
 
 | Component |    $f_c$ (kHz)     |      $f_m$ (kHz)      |    Health    |   Fault #1   | Fault #2     |
 | :-------: | :----------------: | :-------------------: | :----------: | :----------: | ------------ |
@@ -107,22 +107,35 @@ python Demo/Demo_analysis.py --checkpoint_name $checkpoint_name$ # the result is
 |   $C_1$   |        2.5         |          100          |              | $\checkmark$ |              |
 |   $C_2$   |        3.5         |          125          |              |              | $\checkmark$ |
 
-![Dataset presentation](./doc/SimuData.jpg)
-
 <!-- **Time-SHAP**:
 ![Time-SHAP](./doc/Simulation_time_SHAP_visualization.jpg) -->
-
-**Freq-SHAP**:
-![Freq-SHAP](./doc/Simulation_frequency_SHAP_visualization.jpg)
-
-**Env-SHAP**:
-![Env-SHAP](./doc/Simulation_envelope_SHAP_visualization.jpg)
 
 <!-- **TF-SHAP**:
 ![TF-SHAP](./doc/Simulation_STFT_SHAP_visualization.jpg) -->
 
-**CS-SHAP**:
-![CS-SHAP](./doc/Simulation_CS_SHAP_visualization.jpg)
+
+<html>
+<table style="width:100%; table-layout: fixed;">
+  <tr>
+    <td align="center">
+      <strong>Dataset presentation</strong><br>
+      <img src="./doc/SimuData.jpg" alt="Dataset presentation" width="70%">
+    </td>
+        <td  align="center"><strong>Time-SHAP</strong><br><img src="./doc/Simulation_Time_SHAP_visualization.jpg" alt="Time-SHAP" width="100%"></td>
+
+  </tr>
+
+  <tr>
+      <td  align="center"><strong>Freq-SHAP</strong><br><img src="./doc/Simulation_frequency_SHAP_visualization.jpg" alt="Freq-SHAP" width="100%"></td>
+    <td  align="center"><strong>Env-SHAP</strong><br><img src="./doc/Simulation_envelope_SHAP_visualization.jpg" alt="Env-SHAP" width="100%"></td>
+  </tr>
+  <tr>
+    <td  align="center"><strong>TF-SHAP</strong><br><img src="./doc/Simulation_STFT_SHAP_visualization.jpg" alt="TF-SHAP" width="100%"></td>
+        <td  align="center"><strong>CS-SHAP</strong><br><img src="./doc/Simulation_CS_SHAP_visualization.jpg" alt="CS-SHAP" width="100%"></td>
+
+  </tr>
+</table>
+</html>
 
 
 ## Citation
