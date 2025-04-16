@@ -16,7 +16,7 @@
 - **`SHAPs/utils_SHAP_MyIndependent.py`**: Modified SHAP utilities for to support `numpy.ndarray` with `dtype=object`.
 
 ### Demo Code  
-Besides, we also provide **Demo Code**  of the simulation dataset and CWRU dataset. Run the Demo as we have described, and you will get the same experimental results as descripted in the [preprint paper](https://arxiv.org/abs/2502.06424).
+Besides, we also provide **Demo Code**  of the simulation dataset and CWRU dataset. Run the Demo, and you will get the same experimental results as descripted in the [preprint paper](https://arxiv.org/abs/2502.06424).
 
 The repo structure is organized as follows:
 ```
@@ -46,11 +46,9 @@ pip3 install torch torchvision torchaudio --index-url https://download.pytorch.o
 conda install pandas matplotlib seaborn scipy=1.13.1 scikit-learn shap=0.42.1
 ```
 
-**requirement**: `pytorch`, `numpy`, `pandas`, `matplotlib`, `seaborn`, `scipy`, `scikit-learn`, `shap`
-
 
 ### 2. Download Datasets
-**Simulation**: Auto-generated (saved to `Demo/checkpoint`).
+**Simulation**: Auto-generated (saved to `Demo/checkpoint/Buffer-SimulationDataset`).
 
 **CWRU**：
 
@@ -101,6 +99,18 @@ python Demo/Demo_analysis.py
 python Demo/Demo_analysis.py --checkpoint_name $checkpoint_name$ 
 # the result is located in Demo/checkpoint/$checkpoint_name$/PostProcess_of_SHAP_Analysis
 ```
+
+**Calculation time**:
+
+Platform infomattion: `R7-5700X`  | `RTX-4070Ti` | `WSL2`;
+
+|  Dataset   | Model train | Time-SHAP | Freq-SHAP | Env-SHAP | TF-SHAP  | CS-SHAP  |
+| :--------: | :---------: | :-------: | :-------: | :------: | :------: | :------: |
+| Simulation |   35.0 s    |  122.5 s  |  53.1 s   |  30.9 s  | 828.7 s  | 674.6 s  |
+|    CWRU    |   1.48 s    |  211.7 s  |  93.2 s   |  54.3 s  | 1511.2 s | 1223.7 s |
+
+
+
 
 ## Results Preview of simulation dataset
 

@@ -10,7 +10,7 @@ def setseaborn():
     sns.set(style="ticks", context="notebook", font='Times New Roman', palette=current_cmap, font_scale=1)
     return current_cmap
 
-def setdefault(ratio=1, fontsize=4, TrueType=True, font=['Arial', 'simsun']):
+def setdefault(ratio=1, fontsize=4, TrueType=True, font=['Arial']): # font=['Arial', 'simsun']
     '''
     mpl.rcParams: https://matplotlib.org/stable/users/explain/customizing.html
     {k:v for k,v in mpl.rcParams.items() if 'pad' in k}

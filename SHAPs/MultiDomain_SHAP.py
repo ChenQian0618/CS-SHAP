@@ -71,7 +71,7 @@ class MultiDomain_SHAP(object):
             raw_shap_values = explainer(func_Z(input_data),
                                     max_evals=max(int(1e3), int(Z.shape[-1] * 10) // 2))  # max(int(1e3), int(Z.shape[-1] * 10) // 2)
             analyse_time = time.time() - start_time
-            print(f'Analyse time of {Z.shape[-1]:d} samples: {analyse_time:.1f}s')
+            print(f'Analyse time of {input_data.shape[0]:d} samples: {analyse_time:.1f}s')
 
             # 3.2) unpatch the SHAP values to the original domain
             domain_data, domain_shap_value = func_unpatch(raw_shap_values.data, raw_shap_values.values)

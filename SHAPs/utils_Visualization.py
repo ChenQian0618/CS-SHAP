@@ -128,4 +128,4 @@ def attr_visualization(savedir, mode, data, value,plot_params,
                 Axes[n][k].set_ylim(Axes[n][start].get_ylim())
     savepath = os.path.join(savedir, f'{mode:s}_SHAP_visualization.jpg')
     fig.savefig(savepath, dpi=dpi)
-    print(f'Attribution visualization saved in:\n "{savepath.replace('\\','/'):s}"!\n' )
+    print(f'SHAP visualization saved in:\n "{savepath.replace('\\','/'):s}"!\n' )
