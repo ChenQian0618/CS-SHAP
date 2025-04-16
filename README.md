@@ -11,7 +11,7 @@
 
 ## Repository Structure  
 ### Core Code  
-- **`SHAPs/MultiDomain_SHAP.py`**: Implements multi-domain SHAP (Time/Freq/Env/TF/CS-SHAP).  
+- **`SHAPs/MultiDomain_SHAP.py`**: Implements **multi-domain SHAP** (**Time/Freq/Env/TF/CS-SHAP**).  
 - **`SHAPs/DomainTransform.py`**: Signal processing for domain transforms.  
 - **`SHAPs/utils_SHAP_MyIndependent.py`**: Modified SHAP utilities for to support `numpy.ndarray` with `dtype=object`.
 
@@ -69,31 +69,37 @@ conda install pandas matplotlib seaborn scipy=1.13.1 scikit-learn shap=0.42.1
 
 **Simulation Dataset**:
 ``` bash
-# step 0: set the python environment as above, and set shell path to the project path
+# step 0: set the python environment as above, and set current path to the project path
 
 # step 1: train the model
-python Demo/train.py --data_name 'Simulation' # the result is located in Demo/checkpoint/$checkpoint_name$
+python Demo/train.py --data_name 'Simulation' 
+# the result is located in Demo/checkpoint/$checkpoint_name$
 
 # step 2: conduct SHAP analysis, select the first checkpoint_name automatically
-python Demo/Demo_analysis.py --checkpoint_root "./checkpoint/TrainResults" # the result is located in Demo/checkpoint/$checkpoint_name$/PostProcess_of_SHAP_Analysis
+python Demo/Demo_analysis.py 
+# the result is located in Demo/checkpoint/$checkpoint_name$/PostProcess_of_SHAP_Analysis
 
 # (step 2): OR you can specify the $checkpoint_name$ as you wish, e.g., "CNN-CWRU-time-SNR10-0415-002933"
-python Demo/Demo_analysis.py --checkpoint_root "./checkpoint/TrainResults" --checkpoint_name $checkpoint_name$ # the result is located in Demo/checkpoint/$checkpoint_name$/PostProcess_of_SHAP_Analysis$checkpoint_name$
+python Demo/Demo_analysis.py --checkpoint_name $checkpoint_name$ 
+# the result is located in Demo/checkpoint/$checkpoint_name$/PostProcess_of_SHAP_Analysis$checkpoint_name$
 ```
 
 **CWRU Dataset**:
 ``` bash
 # step 0.1: Download the CWRU Dataset and organize as above
-# step 0.2: set the python environment as above, and set shell path to the project path
+# step 0.2: set the python environment as above, and set current path to the project path
 
 # step 1: train the model
-python Demo/train.py --data_name 'CWRU' --data_dir $CWRU_dir$ # the result is located in Demo/checkpoint/$checkpoint_name$
+python Demo/train.py --data_name 'CWRU' --data_dir $CWRU_dir$ 
+# the result is located in Demo/checkpoint/$checkpoint_name$
 
 # step 2: conduct SHAP analysis, select the first checkpoint_name automatically
-python Demo/Demo_analysis.py  # the result is located in Demo/checkpoint/$checkpoint_name$/PostProcess_of_SHAP_Analysis
+python Demo/Demo_analysis.py 
+# the result is located in Demo/checkpoint/$checkpoint_name$/PostProcess_of_SHAP_Analysis
 
 # (step 2): OR you can specify the $checkpoint_name$ as you wish, e.g., "CNN-CWRU-time-SNR10-0415-002933"
-python Demo/Demo_analysis.py --checkpoint_name $checkpoint_name$ # the result is located in Demo/checkpoint/$checkpoint_name$/PostProcess_of_SHAP_Analysis
+python Demo/Demo_analysis.py --checkpoint_name $checkpoint_name$ 
+# the result is located in Demo/checkpoint/$checkpoint_name$/PostProcess_of_SHAP_Analysis
 ```
 
 ## Results Preview of simulation dataset
@@ -107,19 +113,12 @@ python Demo/Demo_analysis.py --checkpoint_name $checkpoint_name$ # the result is
 |   $C_1$   |        2.5         |          100          |              | $\checkmark$ |              |
 |   $C_2$   |        3.5         |          125          |              |              | $\checkmark$ |
 
-<!-- **Time-SHAP**:
-![Time-SHAP](./doc/Simulation_time_SHAP_visualization.jpg) -->
-
-<!-- **TF-SHAP**:
-![TF-SHAP](./doc/Simulation_STFT_SHAP_visualization.jpg) -->
-
-
 <html>
 <table style="width:100%; table-layout: fixed;">
   <tr>
     <td align="center">
       <strong>Dataset presentation</strong><br>
-      <img src="./doc/SimuData.jpg" alt="Dataset presentation" width="70%">
+      <img src="./doc/SimuData.jpg" alt="Dataset presentation" width="100%">
     </td>
         <td  align="center"><strong>Time-SHAP</strong><br><img src="./doc/Simulation_time_SHAP_visualization.jpg" alt="Time-SHAP" width="100%"></td>
 
