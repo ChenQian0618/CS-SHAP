@@ -57,6 +57,7 @@ conda install pandas matplotlib seaborn scipy=1.13.1 scikit-learn shap=0.42.1
 * Mirror: [Baidu NetDisk](https://pan.baidu.com/s/1Q7vXZi3BG6205nzKO57scg?pwd=riah) |  [Kuake NetDisk](https://pan.quark.cn/s/7334676ce5be).
 * Organize as follows:
   ```
+  $CWRU_dir$ 
   ├── 12k Drive End Bearing Fault Data
   ├── 12k Fan End Bearing Fault Data
   ├── 48k DE fault data and normal baseline data
