@@ -121,7 +121,7 @@ python Demo/Demo_analysis.py --checkpoint_name $checkpoint_name$ # the result is
       <strong>Dataset presentation</strong><br>
       <img src="./doc/SimuData.jpg" alt="Dataset presentation" width="70%">
     </td>
-        <td  align="center"><strong>Time-SHAP</strong><br><img src="./doc/Simulation_Time_SHAP_visualization.jpg" alt="Time-SHAP" width="100%"></td>
+        <td  align="center"><strong>Time-SHAP</strong><br><img src="./doc/Simulation_time_SHAP_visualization.jpg" alt="Time-SHAP" width="100%"></td>
 
   </tr>
 
