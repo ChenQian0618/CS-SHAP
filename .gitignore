@@ -2,3 +2,6 @@ Demo/checkpoint/
 __pycache__
 .idea/
 *.lnk
+
+data_buffer.pkl
+Demo/Datasets/Buffer-*

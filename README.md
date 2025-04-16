@@ -105,7 +105,7 @@ python Demo/Demo_analysis.py --checkpoint_name $checkpoint_name$
 
 Platform infomattion: `R7-5700X`  | `RTX-4070Ti` | `WSL2`;
 
-|  Dataset   | Model training | Time-SHAP | Freq-SHAP | Env-SHAP | TF-SHAP  | CS-SHAP  |
+|            | Model training | Time-SHAP | Freq-SHAP | Env-SHAP | TF-SHAP  | CS-SHAP  |
 | :--------: | :---------: | :-------: | :-------: | :------: | :------: | :------: |
 | **Simulation** |   35.0 s    |  122.5 s  |  53.1 s   |  30.9 s  | 828.7 s  | 674.6 s  |
 |    **CWRU**    |   1.48 s    |  211.7 s  |  93.2 s   |  54.3 s  | 1511.2 s | 1223.7 s |

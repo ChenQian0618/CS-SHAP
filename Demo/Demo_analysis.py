@@ -19,7 +19,7 @@ from Demo.utils.DataModel_Loader import DataModel_Loader
 def parse_args():
     parser = argparse.ArgumentParser(description='Demo_analysis')
 
-    parser.add_argument('--checkpoint_root', type=str, default='./checkpoint/TrainResults', help='the name of the data')
+    parser.add_argument('--checkpoint_root', type=str, default='./checkpoint', help='the name of the data')
     parser.add_argument('--checkpoint_name', type=str, default='None', help='specify the checkpoint name,  e.g., "CNN-Simulation-time-SNRNone-0413-191146"')
     parser.add_argument('--domain_mode', type=str, default='all', choices=['all','time', 'frequency', 'envelope', 'STFT', 'CS'], help='the name of the data')
 

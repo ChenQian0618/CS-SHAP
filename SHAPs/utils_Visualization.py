@@ -126,6 +126,7 @@ def attr_visualization(savedir, mode, data, value,plot_params,
             if k > start:
                 Axes[n][k].set_yticks(Axes[n][start].get_yticks())
                 Axes[n][k].set_ylim(Axes[n][start].get_ylim())
-    savepath = os.path.join(savedir, f'{mode:s}_SHAP_visualization.jpg')
-    fig.savefig(savepath, dpi=dpi)
-    print(f'SHAP visualization saved in:\n "{savepath.replace('\\','/'):s}"!\n' )
+    savepath = os.path.join(savedir, f'{mode:s}_SHAP_visualization')
+    fig.savefig(savepath+'.jpg', dpi=dpi)
+    # fig.savefig(savepath+'.svg')
+    print(f'SHAP visualization saved in:\n "{savepath.replace('\\','/')+'.jpg':s}"!\n' )
