@@ -107,6 +107,7 @@ class DataModel_Loader(object):
             storage = torch.load(os.path.join(self.dir, chose_one))
             self.model.load_state_dict(storage['state_dict'])
         print('model load done!')
+        self.model.eval()  # set the model to evaluation mode
 
     def get_fuc_data(self):
         # determine the analysis data
@@ -123,6 +124,7 @@ class DataModel_Loader(object):
 
         # determine the prediction function
         def func_predict(input, device=self.device):
+            self.model.eval()  # set the model to evaluation mode
             input = input if len(input.shape) == 3 else input[:, np.newaxis, ...]
             input = torch.tensor(input, dtype=torch.float32).to(device)
             with torch.no_grad():
