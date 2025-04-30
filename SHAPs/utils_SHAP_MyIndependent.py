@@ -1,6 +1,6 @@
 '''
 2025/04/13
-Created by ChenQian-SJTU 
+Created by ChenQian-SJTU (chenqian2020@sjtu.edu.cn)
 
 shap.__version__ = 0.42.1: (https://github.com/shap/shap/releases/tag/v0.42.1)
 modified from: https://github.com/shap/shap/blob/master/shap/maskers/_tabular.py

@@ -1,6 +1,6 @@
 '''
 2025/04/13
-Created by ChenQian-SJTU
+Created by ChenQian-SJTU (chenqian2020@sjtu.edu.cn)
 '''
 import sys,os
 def root_path_k(x, k): return os.path.abspath(

@@ -1,6 +1,6 @@
 '''
 2025/04/13
-Created by ChenQian-SJTU 
+Created by ChenQian-SJTU (chenqian2020@sjtu.edu.cn)
 This script is used to analyze the SHAP values of the models under different situations (e.g., model, transform function, etc.)
 '''
 import sys,os
