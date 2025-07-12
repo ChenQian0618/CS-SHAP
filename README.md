@@ -118,7 +118,7 @@ Platform infomattion: `R7-5700X`  | `RTX-4070Ti` | `WSL2`;
 
 **Parameter settings**:
 
-| Component |    $f_c$ (kHz)     |      $f_m$ (kHz)      |    Health    |   Fault #1   |   Fault #2   |
+| Component |    $f_c$ (kHz)     |      $f_m$ (Hz)      |    Health    |   Fault #1   |   Fault #2   |
 | :-------: | :----------------: | :-------------------: | :----------: | :----------: | :----------: |
 |   $C_0$   |        1.5         |          50           | $\checkmark$ | $\checkmark$ | $\checkmark$ |
 |   $C_H$   | $\mathcal{U}(1,4)$ | $\mathcal{U}(20,200)$ | $\checkmark$ |              |              |
